@@ -16,6 +16,7 @@
 			video{
 				width:400px;
 				height:400px;
+				display:none;
 			}
 			canvas{
 				width:400px;
@@ -28,7 +29,11 @@
 				var myvideo=document.getElementById("myvideo");
 				var mycanvas=document.getElementById("mycanvas");
 				var mycanvas2d=mycanvas.getContext("2d");
+				var btn=document.getElementById("btn");
 				var time=null;
+				btn.onlick=function(){
+					myvideo.play();
+				}
 				myvideo.addEventListener("play",function(){
 					time=setInterval(function(){
 						mycanvas2d.drawImage(myvideo,0,0,400,400);
@@ -52,6 +57,7 @@
 				<source src="67X2-0906-D.mp4">
 			</video>
 			<canvas id="mycanvas"></canvas>
+			<button id="btn">play</button>
 		</div>
 	</body>
 </html>

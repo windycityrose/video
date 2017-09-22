@@ -31,9 +31,7 @@
 				var mycanvas2d=mycanvas.getContext("2d");
 				var btn=document.getElementById("btn");
 				var time=null;
-				btn.onlick=function(){
-					myvideo.play();
-				}
+				
 				myvideo.addEventListener("play",function(){
 					time=setInterval(function(){
 						mycanvas2d.drawImage(myvideo,0,0,400,400);
@@ -45,6 +43,9 @@
 				myvideo.addEventListener("ended",function(){
 					clearInterval(time);
 				},false)
+				btn.onclick=function(){
+					myvideo.play();
+				}
 			}
 		</script>
 	</head>
